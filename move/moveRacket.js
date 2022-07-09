@@ -8,43 +8,31 @@ function moveRacket(app, racket, upKey, downKey) {
   racket.vy = 0;
 
   //Up
-  leftUp.press = () => {
-    racket.vy = -data.racket.speed;
-  };
-  leftUp.release = () => {
-    if (!leftDown.isDown) {
-      racket.vy = 0;
-    }
-  };
+  leftUp.press = () => racket.vy = -data.racket.speed
+  leftUp.release = () => !leftDown.isDown ? racket.vy = 0 : null
+  
   //Down
-  leftDown.press = () => {
-    racket.vy = data.racket.speed;
-  };
-  leftDown.release = () => {
-    if (!leftUp.isDown) {
-      racket.vy = 0;
-    }
-  };
+  leftDown.press = () => racket.vy = data.racket.speed;
+  leftDown.release = () => !leftUp.isDown ? racket.vy = 0 : null
 
   //Set the game state
   let state = play;
 
   //Start the game loop
-  app.ticker.add((delta) => gameLoop(delta));
+  app.ticker.add((delta) => gameLoop(delta))
 
-  function gameLoop(delta) {
-    //Update the current game state:
-    state(delta);
-  }
-
+  //Update the current game state:
+  const gameLoop = (delta) => state(delta)
+  
   function play(delta) {
     //Use the racket's velocity to make it move
-    if (racket.vy <= 0 && racket.y < -data.racket.limit) {
-      racket.y = -data.racket.limit;
-    }
-    if (racket.vy >= 0 && racket.y > data.racket.limit) {
-      racket.y = data.racket.limit;
-    }
+    let limit
+    limit = data.field.height * data.field.scale - data.racket.height - data.racket.limitCents
+    
+    if (racket.vy <= 0 && racket.y < -limit) racket.y = -limit
+    
+    if (racket.vy >= 0 && racket.y > limit) racket.y = limit
+    
     racket.y += racket.vy;
   }
 }

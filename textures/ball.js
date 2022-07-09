@@ -15,12 +15,8 @@ function createBall() {
     mask.endFill();
     container.addChild(mask)
     
-
-
     ball.mask = mask 
     container.scale.set(data.ball.scale)
-    
-
     
     return container
 }

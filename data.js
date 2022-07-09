@@ -44,7 +44,7 @@
         height: 180,
         round: 4,
         color: '0xffffff',
-        limit: 280,
+        limitCents: 8,
         left:{
             x: -574,
             y: 0,
@@ -62,30 +62,54 @@
 
     },
     ball:{
-        speedX: 3,
-        speedY: 3,
-        scale: 0.1,
+        speedX: 2,
+        speedY: 2,
+        scale: 0.08,
         x:0,
         y:0,
         path: 'img/ball.png',
-        limitY: 346,
-        limitX: 537,
+        limitY: 350,
+        limitX: 540,
         
     },
     scoreText:{
-        fontSize: 26,
+        style:{
+            fontSize: 26,
+            fontFamily: 'Arial',
+        },
+        
         left: {
             check: 6,
             x:-57,
             y: -6,
+            color: '0xffffff'
 
         },
         right: {
             check: 4,
             x: 43,
             y: -6,
+            color: '0xffffff'
 
         },
     },
+    playerText: {
+        style:{
+            fontSize: 28,
+            fontFamily: 'Arial',
+        },
+        left:{
+            x: -250,
+            y: 0,
+            text: 'Игрок 1',
+            color: '0xffffff'
+        },
+        right:{
+            x: 250,
+            y: 0,
+            text: 'Игрок 2',
+            color: '0xffffff'
+        }
+    }
 }
 export default data

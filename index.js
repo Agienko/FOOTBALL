@@ -7,6 +7,11 @@ import createBall from "./textures/ball.js";
 import drawScore from "./textures/scoreText.js";
 import moveRacket from "./move/moveRacket.js";
 import moveBall from "./move/moveBall.js";
+import playerNameText from "./textures/playerNameText.js";
+
+
+const LEFT_SIDE = 'left'
+const RIGHT_SIDE = 'right'
 
 let app = new PIXI.Application({
     width: data.game.width,
@@ -19,13 +24,13 @@ wrapper.appendChild(app.view)
 app.stage.addChild(bgGradient);
 
 //scoreBoards
-let leftScoreBoard = drawScoreBoard('left')
-let rightScoreBoard = drawScoreBoard('right')
+let leftScoreBoard = drawScoreBoard(LEFT_SIDE)
+let rightScoreBoard = drawScoreBoard(RIGHT_SIDE)
 app.stage.addChild(leftScoreBoard, rightScoreBoard);
 
 //add scoreText
-let leftScoreText = drawScore('left')
-let rightScoreText = drawScore('right')
+let leftScoreText = drawScore(LEFT_SIDE)
+let rightScoreText = drawScore(RIGHT_SIDE)
 app.stage.addChild(leftScoreText, rightScoreText)
 
 //add field
@@ -38,11 +43,13 @@ app.stage.addChild(field)
 
 //add fieldBoard
 let bord = drawFieldBoard()
-app.stage.addChild(bord)
+let leftPlayerName = playerNameText(LEFT_SIDE)
+let rightPlayerName = playerNameText(RIGHT_SIDE)
+app.stage.addChild(bord, leftPlayerName, rightPlayerName)
 
 //add rackets
-let leftRacket = drawRacket('left')
-let rightRacket = drawRacket('right')
+let leftRacket = drawRacket(LEFT_SIDE)
+let rightRacket = drawRacket(RIGHT_SIDE)
 field.addChild(leftRacket, rightRacket)
 
 //add ball
@@ -54,3 +61,4 @@ moveRacket(app, rightRacket, data.racket.right.keyUp, data.racket.right.keyDown)
 moveBall(app, ball, {leftRacket, rightRacket})
 
 
+window.ball = ball
