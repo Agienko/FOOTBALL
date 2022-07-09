@@ -2,7 +2,7 @@
     game:{
         width: 1280,
         height: 720,
-        bgColor: 'rgb(13, 55, 175)',
+        bgColor: '#0d37af',
         bgColorCenter: '#76cbf3',
     },
     field:{
@@ -62,14 +62,15 @@
 
     },
     ball:{
-        speedX: 2,
-        speedY: 2,
+        speedX: 4,
+        speedY: 4,
         scale: 0.08,
         x:0,
         y:0,
         path: 'img/ball.png',
         limitY: 350,
         limitX: 540,
+        limitOut: 580
         
     },
     scoreText:{
@@ -79,14 +80,14 @@
         },
         
         left: {
-            check: 6,
+            check: 0,
             x:-57,
             y: -6,
             color: '0xffffff'
 
         },
         right: {
-            check: 4,
+            check: 0,
             x: 43,
             y: -6,
             color: '0xffffff'
@@ -112,7 +113,7 @@
         }
     },
     player: {
-        path: './img/player.png',
+        path: 'img/player.png',
         scale: 0.25,
         left:{
             x: 550,

@@ -1,10 +1,9 @@
 
 import data from "/data.js"
 
-function createBall() {
-    const container = new PIXI.Container()
 
-    let ball = new PIXI.Sprite.from(data.ball.path)
+function createBall(ball) {
+    const container = new PIXI.Container()
     ball.anchor.set(0.5)
     container.addChild(ball)
     

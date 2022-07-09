@@ -1,4 +1,6 @@
-import { isBallOnLeft, isBallOnRight } from './isBallOnRacket.js'
+import { ballOut } from './ballOut.js'
+import { beatBall } from './beatBall.js'
+
 import data from '/data.js'
 
 function moveBall(app, ball, rackets) {
@@ -13,7 +15,6 @@ function moveBall(app, ball, rackets) {
    //Update the current game state:
   const gameLoop = (delta) => state(delta)
   
-
   function play(delta) {
     // Use the racket's velocity to make it move
 
@@ -23,18 +24,10 @@ function moveBall(app, ball, rackets) {
     if (ball.vy >= 0 && ball.y > data.ball.limitY) {
       ball.vy = -ball.vy;
     }
-//game over
-    if ( ball.x > 625 || ball.x < -625) {
-        // app.ticker.stop()
-        ball.vx = -ball.vx;
-      }
-
-
+        //game over
+        ballOut(ball)
       // racket to move
-        if(isBallOnLeft(ball, rackets.leftRacket) 
-        || isBallOnRight(ball, rackets.rightRacket)) {
-            ball.vx = -ball.vx;
-        }
+        beatBall(ball, rackets)
        
     ball.y += ball.vy;
     ball.x += ball.vx;
