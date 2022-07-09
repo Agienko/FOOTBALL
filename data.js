@@ -110,6 +110,18 @@
             text: 'Игрок 2',
             color: '0xffffff'
         }
+    },
+    player: {
+        path: './img/player.png',
+        scale: 0.25,
+        left:{
+            x: 550,
+            y: 0
+        },
+        right:{
+            x: -550,
+            y: 0
+        },
     }
 }
 export default data

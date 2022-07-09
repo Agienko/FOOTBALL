@@ -8,10 +8,9 @@ import drawScore from "./textures/scoreText.js";
 import moveRacket from "./move/moveRacket.js";
 import moveBall from "./move/moveBall.js";
 import playerNameText from "./textures/playerNameText.js";
-
-
-const LEFT_SIDE = 'left'
-const RIGHT_SIDE = 'right'
+import getPlayer from "./textures/player.js";
+import { LEFT_SIDE, RIGHT_SIDE } from "./constants.js";
+import addField from "./textures/field.js";
 
 let app = new PIXI.Application({
     width: data.game.width,
@@ -20,45 +19,49 @@ let app = new PIXI.Application({
 })
 wrapper.appendChild(app.view)
 
-// addgradient
-app.stage.addChild(bgGradient);
 
+//add players
+let leftPlayer = getPlayer(LEFT_SIDE)
+let rightPlayer = getPlayer(RIGHT_SIDE)
 //scoreBoards
 let leftScoreBoard = drawScoreBoard(LEFT_SIDE)
 let rightScoreBoard = drawScoreBoard(RIGHT_SIDE)
-app.stage.addChild(leftScoreBoard, rightScoreBoard);
-
 //add scoreText
 let leftScoreText = drawScore(LEFT_SIDE)
 let rightScoreText = drawScore(RIGHT_SIDE)
-app.stage.addChild(leftScoreText, rightScoreText)
-
 //add field
-let field = new PIXI.Sprite.from(data.field.path)
-field.anchor.set(0.5)
-field.x = app.screen.width / 2;
-field.y = app.screen.height / 2;
-field.scale.set(data.field.scale)
-app.stage.addChild(field)
-
+let field = addField()
 //add fieldBoard
 let bord = drawFieldBoard()
 let leftPlayerName = playerNameText(LEFT_SIDE)
 let rightPlayerName = playerNameText(RIGHT_SIDE)
-app.stage.addChild(bord, leftPlayerName, rightPlayerName)
+
+// add in Stage
+app.stage.addChild(
+    bgGradient, 
+    leftScoreBoard, 
+    rightScoreBoard, 
+    leftPlayer, 
+    rightPlayer, 
+    leftScoreText, 
+    rightScoreText, 
+    field, 
+    bord, 
+    leftPlayerName, 
+    rightPlayerName,
+    )
 
 //add rackets
 let leftRacket = drawRacket(LEFT_SIDE)
 let rightRacket = drawRacket(RIGHT_SIDE)
-field.addChild(leftRacket, rightRacket)
-
 //add ball
 let ball = createBall()
-field.addChild(ball)
+
+field.addChild(leftRacket, rightRacket, ball)
+
 
 moveRacket(app, leftRacket, data.racket.left.keyUp, data.racket.left.keyDown)
 moveRacket(app, rightRacket, data.racket.right.keyUp, data.racket.right.keyDown)
 moveBall(app, ball, {leftRacket, rightRacket})
 
 
-window.ball = ball

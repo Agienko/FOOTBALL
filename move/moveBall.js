@@ -1,4 +1,4 @@
-import { isBallOnLeft, isBallOnRight } from './isBallOn.js'
+import { isBallOnLeft, isBallOnRight } from './isBallOnRacket.js'
 import data from '/data.js'
 
 function moveBall(app, ball, rackets) {

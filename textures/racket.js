@@ -1,8 +1,8 @@
-import data from "../data.js";
+import data from "../data.js"
 
 function drawRacket(position){
     let racket = new PIXI.Graphics()
-    racket.lineStyle(data.field.border.thick, data.field.border.color, 1);
+    racket.lineStyle(data.field.border.thick, data.field.border.color, 1)
     racket.beginFill(data.racket[position].color);
     racket.drawRoundedRect(
         data.racket[position].x - data.racket.width/2, 
@@ -10,8 +10,8 @@ function drawRacket(position){
         data.racket.width, 
         data.racket.height,
         data.racket.round
-        );
-        racket.endFill();
+        )
+        racket.endFill()
     return racket
 }
 
