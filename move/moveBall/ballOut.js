@@ -1,4 +1,4 @@
-import checkWin from '../../checkWin.js'
+import checkWin from '../../subFunc/checkWin.js'
 import { leftScoreText, rightScoreText } from '../../index.js'
 import data from '/data.js'
 

@@ -4,8 +4,8 @@
         height: 720,
         bgColor: '#0d37af',
         bgColorCenter: '#76cbf3',
-        maxScore: 2,
-        acceleration: 0
+        maxScore: 21,
+        acceleration: 1
     },
     field:{
         width: 990,
@@ -45,7 +45,8 @@
         width: 13,
         height: 180,
         round: 4,
-        color: '0xffffff',
+        borderColor: '0xffffff',
+        thick: 1,
         limitCents: 8,
         left:{
             x: -574,
@@ -98,7 +99,7 @@
     },
     playerText: {
         style:{
-            fontSize: 28,
+            fontSize: 34,
             fontFamily: 'Arial',
         },
         left:{
@@ -127,8 +128,8 @@
         },
     },
     underText:{
-        text: 'Старт',
-        textPause: 'Пауза',
+        text: 'Start',
+        textPause: 'Pause',
         x: 0,
         y: 50,
         style:{

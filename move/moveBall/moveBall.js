@@ -19,18 +19,19 @@ function moveBall() {
     // Use the racket's velocity to make it move
 
     if (ball.vy <= 0 && ball.y < -data.ball.limitY) {
-      ball.vy = -ball.vy;
+      ball.vy = -ball.vy 
     }
     if (ball.vy >= 0 && ball.y > data.ball.limitY) {
-      ball.vy = -ball.vy;
+      ball.vy = -ball.vy 
     }
         //game over
         ballOut(ball)
       // racket to move
-        beatBall(ball, {leftRacket, rightRacket})
-       
-    ball.y += ball.vy;
-    ball.x += ball.vx;
+        beatBall(ball, {leftRacket, rightRacket});
+        
+    ball.y += ball.vy 
+    ball.x += ball.vx 
+    
   }
 }
 

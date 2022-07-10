@@ -1,4 +1,4 @@
-import startGameFunc from "./move/moveBall/startGameFunc.js"
+import startGameFunc from "../move/moveBall/startGameFunc.js"
 
 
 function checkWin(maxScore, checkLeft, checkRight) {

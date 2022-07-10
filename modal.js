@@ -1,3 +1,4 @@
+import { changeSettings } from './subFunc/changeSettings.js';
 import data from '/data.js';
 
 const modal = document.createElement('div');
@@ -124,11 +125,11 @@ document.addEventListener('click', (e) => {
       break;
     case 'ok':
         e.preventDefault()
-console.log([...document.forms[0].elements].filter(i => i.value !== undefined).map(i => i.value))
-
-
-
-
+    const dataArr = [...document.forms[0].elements]
+    .filter((i, j) => i.checked || [1,2,4,5].includes(j))
+    .map(i=> i.value)
+    
+    changeSettings(dataArr)
       modal.style.opacity = 0;
       setTimeout(() => {
         modal.style.zIndex = -1;

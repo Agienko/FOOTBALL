@@ -71,12 +71,13 @@ wrapper.appendChild(app.view);
 
 export let leftScoreText = drawScore(LEFT_SIDE);
 export let rightScoreText = drawScore(RIGHT_SIDE);
+export let leftPlayerName = playerNameText(LEFT_SIDE);
+export let rightPlayerName = playerNameText(RIGHT_SIDE);
 let leftScoreBoard = drawScoreBoard(LEFT_SIDE);
 let rightScoreBoard = drawScoreBoard(RIGHT_SIDE);
 
 let bord = drawFieldBoard();
-let leftPlayerName = playerNameText(LEFT_SIDE);
-let rightPlayerName = playerNameText(RIGHT_SIDE);
+
 
 
 //start, pause
