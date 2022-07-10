@@ -4,6 +4,8 @@
         height: 720,
         bgColor: '#0d37af',
         bgColorCenter: '#76cbf3',
+        maxScore: 2,
+        acceleration: 0
     },
     field:{
         width: 990,
@@ -103,13 +105,13 @@
             x: -250,
             y: 0,
             text: 'Игрок 1',
-            color: '0xffffff'
+            color: '#ffffff'
         },
         right:{
             x: 250,
             y: 0,
             text: 'Игрок 2',
-            color: '0xffffff'
+            color: '#ffffff'
         }
     },
     player: {
@@ -123,6 +125,32 @@
             x: -550,
             y: 0
         },
+    },
+    underText:{
+        text: 'Старт',
+        textPause: 'Пауза',
+        x: 0,
+        y: 50,
+        style:{
+            fontSize: 42,
+            fontFamily: 'Arial',
+            fill: ['0xEE5505'],
+            fontWeight: 'bold',
+            dropShadow: true,
+            dropShadowColor: '#000000',
+            dropShadowBlur: 4,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 2,
+        },
+        styleOn:{
+            fontSize: 46,
+            dropShadowDistance: 4,
+        },
+    
+    },
+    settingsBtn:{
+        x:40 ,
+        y:20
     }
 }
 export default data

@@ -1,9 +1,9 @@
 import { ballOut } from './ballOut.js'
 import { beatBall } from './beatBall.js'
-
+import { app, ball , leftRacket, rightRacket} from "../../index.js";
 import data from '/data.js'
 
-function moveBall(app, ball, rackets) {
+function moveBall() {
   ball.vy = data.ball.speedY *[1,-1][Math.floor(Math.random()*2)]
   ball.vx = data.ball.speedX*[1,-1][Math.floor(Math.random()*2)]
 
@@ -27,7 +27,7 @@ function moveBall(app, ball, rackets) {
         //game over
         ballOut(ball)
       // racket to move
-        beatBall(ball, rackets)
+        beatBall(ball, {leftRacket, rightRacket})
        
     ball.y += ball.vy;
     ball.x += ball.vx;

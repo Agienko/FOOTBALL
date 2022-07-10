@@ -1,0 +1,84 @@
+.modalWrapper{
+    opacity: 0;
+    z-index: -1;
+    color:black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.507);
+    transition: opacity .15s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal{
+    overflow: auto;
+    user-select: none;
+    margin: 30px;
+    font-size:medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 5px solid #0073ff8b;
+    min-width: 400px;
+    border-radius: 30px;
+    background-color:aliceblue;
+    overflow-y: visible;
+    
+}
+
+.modalHeader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.modalHeader img{
+    position: absolute;
+    right: 0;
+    width: 30px;
+    cursor: pointer;
+}
+
+   
+.modalContent{
+    padding: 20px; 
+}
+.modalContent label{
+    margin: 0 5px;
+}
+
+.modal div{  
+  margin: 50 auto;
+}
+
+.modalContent fieldset{
+    padding: 5px;
+    margin: 10px 15px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.modalContent fieldset label, input{
+    cursor: pointer;
+}
+table{
+    border: 1px solid gray;
+}
+tr, td, th{
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.forBtnClose{
+    display: flex;
+    justify-content: space-around;
+}
+.forBtnClose button{
+    font-size: large;
+    width: 80px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+   
+}
