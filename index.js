@@ -13,11 +13,12 @@ import addField from './textures/field.js';
 import underTextFunc from './textures/underText.js';
 import startGameFunc from './move/moveBall/startGameFunc.js';
 import createBtn from './textures/settingsBtn.js';
-
+import drawFinalText from './textures/finalText.js';
 
 //texture Names
 export let app, ball, leftRacket, rightRacket
-let field, leftPlayer, rightPlayer, underTextDraw, settingsBtn;
+let field, leftPlayer, rightPlayer,
+ underTextDraw, settingsBtn;
 
 const sprites = {};
 
@@ -27,7 +28,7 @@ loader
   .add('ball', data.ball.path)
   .add('player', data.player.path)
   .load((loader, resources) => {
-
+    
     sprites.field = new PIXI.Sprite(resources.field.texture);
     sprites.ball = new PIXI.Sprite(resources.ball.texture);
     sprites.leftPlayer = new PIXI.Sprite(resources.player.texture);
@@ -52,9 +53,9 @@ loader.onComplete.add(() => {
     leftPlayer, rightPlayer, leftScoreText,
     rightScoreText, field, bord,
     leftPlayerName, rightPlayerName, underTextDraw,
-    settingsBtn
+    settingsBtn, finalText
   )
-  
+  finalText.visible = false
   moveRacket(app, leftRacket, data.racket.left.keyUp, data.racket.left.keyDown);
   moveRacket(app, rightRacket, data.racket.right.keyUp, data.racket.right.keyDown);
 
@@ -73,15 +74,11 @@ export let leftScoreText = drawScore(LEFT_SIDE);
 export let rightScoreText = drawScore(RIGHT_SIDE);
 export let leftPlayerName = playerNameText(LEFT_SIDE);
 export let rightPlayerName = playerNameText(RIGHT_SIDE);
+export let finalText = drawFinalText()
 let leftScoreBoard = drawScoreBoard(LEFT_SIDE);
 let rightScoreBoard = drawScoreBoard(RIGHT_SIDE);
 
 let bord = drawFieldBoard();
 
-
-
-//start, pause
-
 document.addEventListener('keydown', startGameFunc)
 
-app.stage.addChild(createBtn())

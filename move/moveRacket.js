@@ -1,4 +1,4 @@
-import keyboard from './keyboardFunc.js'
+import keyboard from '../subFunc/keyboardFunc.js'
 import data from '/data.js'
 
 function moveRacket(app, racket, upKey, downKey) {

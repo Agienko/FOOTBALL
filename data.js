@@ -4,8 +4,9 @@
         height: 720,
         bgColor: '#0d37af',
         bgColorCenter: '#76cbf3',
-        maxScore: 21,
-        acceleration: 1
+        maxScore: 2,
+        acceleration: 1,
+        crazyness: 5,
     },
     field:{
         width: 990,
@@ -51,14 +52,14 @@
         left:{
             x: -574,
             y: 0,
-            color: '0xffffff',
+            color: '0xff0000',
             keyUp: 65,
             keyDown: 90, 
         },
         right:{
             x: 574,
             y: 0,
-            color: '0xffffff',
+            color: '0xffff00',
             keyUp: 222,
             keyDown: 191
         },
@@ -66,13 +67,13 @@
     },
     ball:{
         speedX: 4,
-        speedY: 4,
+        speedY: 5,
         scale: 0.08,
         x:0,
         y:0,
         path: 'img/ball.png',
         limitY: 350,
-        limitX: 540,
+        limitX: 542,
         limitOut: 580
         
     },
@@ -105,14 +106,14 @@
         left:{
             x: -250,
             y: 0,
-            text: 'Игрок 1',
-            color: '#ffffff'
+            text: 'Player_1',
+            color: '#ff0000'
         },
         right:{
             x: 250,
             y: 0,
-            text: 'Игрок 2',
-            color: '#ffffff'
+            text: 'Player_2',
+            color: '#ffff00'
         }
     },
     player: {
@@ -149,9 +150,42 @@
         },
     
     },
+    finalText:{
+        text: 'You Win!',
+        newGameBtn:{
+            text: 'New Game',
+            x:0,
+            y:80,
+            style:{
+                fontSize: 60,
+                fontFamily: 'Arial',
+                fill: ['0xaa5588', '0xffee88'],
+                fontWeight: 'bold',
+                dropShadow: true,
+                dropShadowColor: '#000000',
+                dropShadowBlur: 10,
+                dropShadowAngle: Math.PI / 8,
+                dropShadowDistance: 10,
+            },
+        },
+        x: 0,
+        y: -80,
+        style:{
+            fontSize: 70,
+            fontFamily: 'Arial',
+            fill: ['0xaaee88', '0xffaa22'],
+            fontWeight: 'bold',
+            dropShadow: true,
+            dropShadowColor: '#000000',
+            dropShadowBlur: 10,
+            dropShadowAngle: Math.PI / 8,
+            dropShadowDistance: 10,
+        },
+    },
     settingsBtn:{
         x:40 ,
-        y:20
-    }
+        y:30
+    },
+    
 }
 export default data
