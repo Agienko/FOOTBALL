@@ -4,7 +4,7 @@
         height: 720,
         bgColor: '#0d37af',
         bgColorCenter: '#76cbf3',
-        maxScore: 2,
+        maxScore: 21,
         acceleration: 1,
         crazyness: 5,
     },
